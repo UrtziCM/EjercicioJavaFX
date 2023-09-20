@@ -28,6 +28,10 @@ public class Ejercicio extends Application {
 		mainPane.setCenter(txtfNombre);
 		mainPane.setBottom(botonAceptar);
 		botonAceptar.setAlignment(Pos.CENTER);
+
+		stage.setResizable(false);
+		stage.setHeight(100);
+		stage.setWidth(200);
 		stage.setScene(mainScene);
 		stage.show();
 	}
