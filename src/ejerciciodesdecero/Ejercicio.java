@@ -54,11 +54,10 @@ public class Ejercicio extends Application {
 		VBox mainPane = new VBox();
 		Scene modalScene = new Scene(mainPane);
 		/* Si el nombre es Obi Wan o derivados, cambiamos el saludo a General Kenobi*/
-		if (nombre.toLowerCase().contains("obi wan")) {
-			mainPane.getChildren().add(new Text("General Kenobi!"));
-		} else {
-			mainPane.getChildren().add(new Text("Hola " + nombre));
-		}
+		Text txtModal =(nombre.toLowerCase().contains("obi wan"))? new Text("General Kenobi!"):new Text("Hola " + nombre);
+		mainPane.getChildren().add(txtModal);
+		modal.setWidth(150);
+		modal.setHeight(75);
 		/* Establecemos escena y enseñamos la ventana */
 		modal.setScene(modalScene);
 		modal.show();
