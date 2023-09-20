@@ -23,12 +23,27 @@ public class Ejercicio extends Application {
 		Button botonAceptar = new Button("Aceptar");
 		TextField txtfNombre = new TextField();
 
-		botonAceptar.setOnAction(e -> txtfNombre.getText());
+		botonAceptar.setOnAction(e -> modalSaludo(txtfNombre.getText()));
 		BorderPane.setAlignment(botonAceptar, Pos.CENTER);
 		mainPane.setCenter(txtfNombre);
 		mainPane.setBottom(botonAceptar);
 		botonAceptar.setAlignment(Pos.CENTER);
 		stage.setScene(mainScene);
 		stage.show();
+	}
+
+	private static void modalSaludo(String nombre) {
+		Stage modal = new Stage();
+		modal.setTitle("");
+		VBox mainPane = new VBox();
+		Scene modalScene = new Scene(mainPane);
+		if (nombre.toLowerCase().equals("obi wan")) {
+			mainPane.getChildren().add(new Text("General Kenobi!"));
+		} else {
+			mainPane.getChildren().add(new Text("Hola " + nombre));
+		}
+
+		modal.setScene(modalScene);
+		modal.show();
 	}
 }
