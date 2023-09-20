@@ -1,9 +1,13 @@
 package ejerciciodesdecero;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Ejercicio extends Application {
@@ -14,12 +18,16 @@ public class Ejercicio extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		VBox mainBox = new VBox();
-		mainScene = new Scene(mainBox);
+		BorderPane mainPane = new BorderPane();
+		mainScene = new Scene(mainPane);
 		Button botonAceptar = new Button("Aceptar");
-		botonAceptar.setOnAction(e -> stage.close());;
+		TextField txtfNombre = new TextField();
 
-		mainBox.getChildren().add(botonAceptar);
+		botonAceptar.setOnAction(e -> txtfNombre.getText());
+		BorderPane.setAlignment(botonAceptar, Pos.CENTER);
+		mainPane.setCenter(txtfNombre);
+		mainPane.setBottom(botonAceptar);
+		botonAceptar.setAlignment(Pos.CENTER);
 		stage.setScene(mainScene);
 		stage.show();
 	}
