@@ -24,6 +24,7 @@ public class Ejercicio extends Application {
 		
 		/* Creamos un boton y un textfield para que se introduzcan datos */
 		Button botonAceptar = new Button("Aceptar");
+		Button botonCerrar = new Button("x");
 		TextField txtfNombre = new TextField();
 
 		/* Establecemos el outcome de pulsar el boton */
@@ -35,6 +36,18 @@ public class Ejercicio extends Application {
 		mainPane.setCenter(txtfNombre); // Panel en el centro
 		mainPane.setBottom(botonAceptar); // Panel en la parte de abajo
 
+		botonCerrar.setOnAction(e -> stage.close());
+		BorderPane.setAlignment(botonAceptar, Pos.CENTER);
+		mainPane.setCenter(txtfNombre);
+		mainPane.setBottom(botonAceptar);
+		mainPane.setTop(botonCerrar);
+		botonAceptar.setAlignment(Pos.CENTER);
+
+		BorderPane.setAlignment(botonCerrar, Pos.TOP_RIGHT);
+
+		stage.setResizable(false);
+		stage.setHeight(100);
+		stage.setWidth(200);
 		/* Establecemos la escena y enseñamos la ventana */
 		stage.setScene(mainScene);
 		stage.show();
